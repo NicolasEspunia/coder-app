@@ -4,7 +4,7 @@ import { useParams } from  "react-router-dom";
 import Cargando from '../Spinner/Spinner'
 import Item from '../Item/Item'
 import './ItemList.css'
-import getFirestore  from '../../services/getFirebase';
+import {getFirestore} from 'firebase/firestore';
 // import {Carousel} from "react-boostrap";
 import { Link } from "react-router-dom"
 
@@ -37,32 +37,7 @@ function ItemList () {
         <>             
             { loading ? <Cargando /> : 
             <>
-            {/* <Carousel>
-            <Carousel.Item >
-              <img
-                className="d-block w-100"
-                src= "https://media.vandal.net/i/1200x630/11-2021/202111231926782_1.jpg"
-                alt="First slide"
-                />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://xanatos.es/wp-content/uploads/2021/01/wallpaper-de-ne-n.jpg"
-                alt="Second slide"
-            
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://i.blogs.es/e21dd2/pc-gaming/1366_521.jpeg"
-                alt="Third slide"
-        
-              />
-        
-            </Carousel.Item>
-          </Carousel> */}
+           
 
           <div id= "nosotros"> 
               <h2>Sobre Nosotros</h2>

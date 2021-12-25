@@ -9,7 +9,9 @@ import Footer from './components/Footer/Footer'
 import  CartContextProvider  from "./components/Context/cartContex"
 
 
+
 function App() {
+
   return (
 
     <CartContextProvider>
@@ -17,7 +19,8 @@ function App() {
 
       <div className= "App">
         <NavBar /> 
-          <Routes> 
+          <Routes>
+
 
               <Route  exact path= '/' >
                 <ItemListContainer  /> 
@@ -33,9 +36,10 @@ function App() {
                 <Cart />
               </Route>
 
-        </Routes>
+        
 
          <Footer /> 
+          </Routes>
        </div>
     </BrowserRouter>
     </CartContextProvider>
