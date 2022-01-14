@@ -1,35 +1,17 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
-import { useParams } from  "react-router-dom";
+import { useState } from 'react'
 import Cargando from '../Spinner/Spinner'
 import Item from '../Item/Item'
 import './ItemList.css'
-import {getFirestore} from 'firebase/firestore';
+
 // import {Carousel} from "react-boostrap";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function ItemList () { 
-    const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
-    const { idCategoria } = useParams ()
+    const [productos] = useState([])
 
+    const [loading] = useState(true);
 
-    useEffect(() => {
-
-        const dbQuery = getFirestore()
-        const nuevaColeccion = idCategoria ?
-                                    dbQuery.collection("productos").where("categoria", "==", idCategoria)
-                                    :
-                                    dbQuery.collection("productos")
-
-        nuevaColeccion.get()
-        .then(resp => {
-            setProductos (resp.docs.map(producto => ({id : producto.id, ...producto.data() }  ) ) )
-        })
-        .catch(err =>console.log(err))
-        .finally(()=> setLoading(false))
-
-    }, [idCategoria, setLoading])
 
 
     

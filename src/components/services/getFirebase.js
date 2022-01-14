@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import {initializeApp} from "firebase/app";
-import {getFirestore} from "firebase/firestore";
+import firebase from "firebase";
+import "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -12,8 +12,13 @@ const firebaseConfig = {
   projectId: "coderhardware",
   storageBucket: "coderhardware.appspot.com",
   messagingSenderId: "284452309685",
-  appId: "1:284452309685:web:a5f0f234ef9fcf43bfccfc",
-  measurementId: "G-G0S3F675BP"
+  measurementId: "G-G0S3F675BP",
+  appId: "1:284452309685:web:a5f0f234ef9fcf43bfccfc"
 };
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app)
+const app = firebase.initializeApp(firebaseConfig)
+
+
+export function getFirestore () {
+    
+    return firebase.firestore(app)
+}

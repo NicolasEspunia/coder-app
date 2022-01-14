@@ -4,7 +4,7 @@ import ItemCount from "../ItemCount/ItemCount"
 // import Button from 'reactstrap/Button'
 import { Link } from 'react-router-dom'
 import { useCartContext } from "../Context/cartContex"
-// import getFirestore from "../services/getFirebase"
+
 
 
 function ItemDetail( {producto={}} ) {
@@ -18,14 +18,7 @@ function ItemDetail( {producto={}} ) {
         addToCart ({producto: producto, quantity:count})
     }
 
-// useEffect(() =>{
 
-//     const db = getFirestore()
-//     const dbQuery = db.collection('productos').doc(
-//         SqCMcgoKrm4DKapWeEhg).get()
-
-//     .them(resp => console.log(resp))    
-// },[])
 
     return (
         <div className = "itemDetail">

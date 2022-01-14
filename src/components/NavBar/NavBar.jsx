@@ -1,18 +1,45 @@
 import CartWidget from './CartWidget'
-
-import {Navbar} from 'reactstrap'
-import {Nav} from 'reactstrap'
-import {NavDropdown} from 'react-bootstrap'
-import { Container } from 'reactstrap'
 import logo from '../NavBar/logo.png'
 import { Link } from "react-router-dom";
+
+// import Navbar from 'react-bootstrap/Navbar';
+// import Nav from 'react-bootstrap/Nav';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+// import Container from 'react-bootstrap/Container';
 
 
 
 const NavBar =() => {
 return (
 <>
-  <Navbar collapseOnSelect expand="lg">
+<ul>
+  <Link to="/"><li><img src={logo} className="logo" alt= "logo " /></li></Link> 
+  <Link to="/"><li>Home</li></Link>
+  <Link to="/"><li>Nosotros</li>
+    <ul>
+      <li>Team</li>
+      <li>Clientes</li>
+      <li>Legacy</li>
+    </ul>
+  </Link>
+  <Link to="/"><li>Contacto</li></Link>  
+  <Link to="/"><li>Categoria</li>
+     <ul>
+        <Link to="/#conjuntoIconos"><li>PC COMPLETA</li></Link>
+        <Link to="/#conjuntoIconos"><li>GABINETE</li></Link>
+        <Link to="/#conjuntoIconos" ><li>MONITORES</li></Link>
+        <Link to="/#conjuntoIconos"><li>ACCESORIOS</li></Link>
+     </ul>  
+  </Link>
+  
+
+  <li className='cart'>
+    <Link to="/cart">
+            <CartWidget />
+            </Link>
+    </li>
+</ul>
+  {/* <Navbar collapseOnSelect expand="lg">
 
     <Container>
 
@@ -69,7 +96,7 @@ return (
         </Nav>
       </Navbar.Collapse>
     </Container>
-  </Navbar>
+  </Navbar> */}
 
 </>
 
